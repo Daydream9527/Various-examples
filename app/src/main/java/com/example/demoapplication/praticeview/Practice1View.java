@@ -63,6 +63,7 @@ public class Practice1View extends View{
         paint.setAntiAlias(true); //这里是设置抗锯齿
         paint.setTextSize(20);   //这里是设置字体大小
         //渐变的圆
+        //渐变的圆
 //        Shader shader=new LinearGradient(100, 100, 500, 500, Color.parseColor("#E91E63"),
 //                Color.parseColor("#2196F3"), Shader.TileMode.CLAMP);
 //        paint.setShader(shader);
