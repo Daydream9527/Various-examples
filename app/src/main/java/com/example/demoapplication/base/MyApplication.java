@@ -2,6 +2,7 @@ package com.example.demoapplication.base;
 
 import android.annotation.TargetApi;
 import android.app.Application;
+import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.annotation.NonNull;
 import android.support.multidex.MultiDexApplication;
@@ -20,17 +21,19 @@ public class MyApplication extends MultiDexApplication {
     private SQLiteDatabase db;
     private DaoMaster mDaoMaster;
     private DaoSession mDaoSession;
-    public static MyApplication instances;
-
+    public static Context applicationContext;
 
     @Override
     public void onCreate() {
         super.onCreate();
-        instances = this;
+        applicationContext = getApplicationContext();
         setDatabase();
     }
-    public static MyApplication getInstances() {
-        return instances;
+    /**
+     * 获取全局上下文
+     */
+    public static Context getContext() {
+        return applicationContext;
     }
     /**
      * 设置greenDao
